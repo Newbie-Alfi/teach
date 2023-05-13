@@ -3,11 +3,16 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+<jsp:include page="header.jsp" />
+<h4>Перейти к:</h4>
+<ol>
+    <li><a href="hello-servlet">Преподаватели</a></li>
+    <li><a href="subjects">Дисциплины</a></li>
+</ol>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<jsp:include page="footer.jsp" />
 </body>
 </html>

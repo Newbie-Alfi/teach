@@ -1,0 +1,8 @@
+<%@ page language="java" contentType="text/html"
+         pageEncoding="UTF-8"%>
+<header>
+  <a href="/"><img alt="Логотип" id="top-image" src="https://yandex-images.clstorage.net/5STK1u170/445866OhrVIt/6ntG7pzPGJf081DNuX8YzNA6Cn_1N8-vu1BIWNmrPZQDs9VcjBCVv879UzlcrkkYSTPLZDSJpKgMjoLCRUhjeN5_gordur2jtWYQTYkvORkECxu6VXIeC56VrMgsO_2UEFUCXttW5yzZCrSb6L58rZzyahVV_yLZW3-UxBR9YExpGYaeqY7519Chwo-JXWvYEJtam9TiXn2_pC7O_C9JE9LU0UzbhkeveIm0O-pf_W3v4x3FNZ2jzjmuRpeVfiGMi7tmbjj96VahM8N8Ow3qGxKYKbl3E68tDlTd_x18eCIz5gIsuVZUrclalSuKfr1dP7JMdsTsYQzITWWEZh7iT8uoRa6JvlqUUsBSfSu-K2hAyJh4ZQFOnTxGfmw8PonSAgQSn9llJY3ZOoZLW_wcbO-BjXZGLAEdqmzWdvU9gbzLyBVeKI1JVJBgc7wpnAmpQVlZeDaQnf9f9exsrjwbkGMEoJ3rlgWeirgFaRvd7M-cMXxn9n4Brxvc5Sc1HiFeuAj2T8rdGKXTE8J_KJ3JOTAry0s2gP1-z9Ut_4_NaZNApCLum_QXvrnL1Hvaf00sr6J_l9Q9sb05LVRnxz0gLsmaxw1IzdimAJIgXCm_ehqiicoJdYFNjI2Hjp9MDFuxQUTCr0oVt6zK2ZeL6-7OHwziTgdkHvB9yM_GxUZ9oTzr-bRdiUzKhIDBom0ov-paYsjqezWzv87e1n9d7865s6EE0V7ZN-WtmWgGGxvfzw6NAx6GF4yifRucdSVnHmNfmkpnrOlc64SyM-Ie-52LObALeQlW0l0Pz8Uf31yOexNxFWMsKVSUXeqKZ2ppTX1PjLPOZyQMsE24rBdX5C8zjFgoBq1bPGtEEPPSv6kOe9tyyJhrZDN8bv5FDI0MPWhQsTYjTCkXlU7bKqeb2_6OfF-RT7YFnBHse-zXd2bNAT2bWtTdCs6YVmNiQc3rvCmLEjrIaTbBTd-Ptl5sA"></a>
+  <div id="user-panel">
+    <h1><%= "Система преподавателей!" %></h1>
+  </div>
+</header>
