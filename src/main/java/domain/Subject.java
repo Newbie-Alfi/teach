@@ -3,37 +3,13 @@ package domain;
 import java.util.Date;
 
 public class Subject {
-    private Long id;
-    private String fullName;
-    private String academicTitle;
-    private String academicDegree;
-    private String post;
-    private Date createdAt;
-
-    public Subject() {
-    }
-
-    public Subject(String fullName, String academicTitle, String academicDegree, String post) {
-        this.fullName = fullName;
-        this.academicTitle = academicTitle;
-        this.academicDegree =academicDegree;
-        this.post = post;
-    }
-
-    public Subject(Long id, String fullName, String academicTitle,  String academicDegree, String post) {
-        this.id = id;
-        this.fullName = fullName;
-        this.academicTitle = academicTitle;
-        this.academicDegree =academicDegree;
-        this.post = post;
-    }
-
-    public Subject(Long id, String fullName, String academicTitle, Date createdAt) {
-        this.id = id;
-        this.fullName = fullName;
-        this.academicTitle = academicTitle;
-
-        this.createdAt = createdAt;
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 
     public Long getId() {
@@ -41,40 +17,38 @@ public class Subject {
     }
 
     public void setId(Long id) {
-
         this.id = id;
     }
 
-    public String getFullName() {
-        return fullName;
+    private Long id;
+    private String name;
+    private String type;
+
+    public Subject() {    }
+
+    public String getName() {
+        return name;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public String getType() {
+        return type;
     }
 
-    public String getAcademicTitle() {
-        return academicTitle;
+    public Subject(String name, String type) {
+        this.name = name;
+        this.type = type;
     }
 
-    public void setAcademicTitle(String email) {
-        this.academicTitle = email;
+    public Subject(Long id, String name, String type) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
     }
 
-    public Date getCreatedAt() {
-        return createdAt;
+    public Subject(Long id, String name, String type, Date createdAt) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    @Override
-    public String toString() {
-        return "Author [id=" + id
-                + ", fullName="
-                + fullName + ", email="
-                + academicTitle + ", createdAt="
-                + createdAt + "]";
-    }
 }

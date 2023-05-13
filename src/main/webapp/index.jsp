@@ -6,13 +6,13 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<jsp:include page="header.jsp" />
+<jsp:include page="jspf/header.jsp" />
 <h4>Перейти к:</h4>
 <ol>
-    <li><a href="hello-servlet">Преподаватели</a></li>
+    <li><a href="teachers">Преподаватели</a></li>
     <li><a href="subjects">Дисциплины</a></li>
 </ol>
 <br/>
-<jsp:include page="footer.jsp" />
+<jsp:include page="jspf/footer.jsp" />
 </body>
 </html>
