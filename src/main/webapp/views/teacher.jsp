@@ -1,36 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page import="domain.Teacher"%>
-<%
-    Teacher a1 = new Teacher(
-            "Аверченко Аркадий Тимофеевич",
-            "Доктор Наук",
-            "Доцент",
-            "Преподаватель"
-    );
-    Teacher a2 = new Teacher(
-            "Гаверченко Аркадий Тимофеевич",
-            "Доктор Наук",
-            "Доцент",
-            "Преподаватель"
-    );
-    Teacher a3= new Teacher(
-            "Ваверченко Аркадий Тимофеевич",
-            "Доктор Наук",
-            "Доцент",
-            "Преподаватель"
-    );
-    Teacher a4 = new Teacher(
-            "Шаверченко Аркадий Тимофеевич",
-            "Доктор Наук",
-            "Доцент",
-            "Преподаватель"
-    );
-    Teacher[] teachers = new Teacher[]{a1, a2, a3,a4};
-
-    int length = teachers.length;
-    pageContext.setAttribute("teachers", teachers);
-%>
 
 <!DOCTYPE html>
 <html>

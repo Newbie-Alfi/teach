@@ -1,17 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ page import="domain.Subject"%>
-<%
-    Subject a1 = new Subject("Информационные сети", "Лекция");
-    Subject a2 = new Subject("Информационные проблемы", "Лекция");
-    Subject a3= new Subject("Информационные технологии", "Лекция");
-    Subject a4 = new Subject("Информационные системы", "Лекция");
-    
-    Subject[] subjects = new Subject[]{a1, a2, a3,a4};
-
-    int length = subjects.length;
-    pageContext.setAttribute("subjects", subjects);
-%>
 
 <!DOCTYPE html>
 <html>
