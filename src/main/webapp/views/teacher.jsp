@@ -48,35 +48,21 @@
         <article>
             <h3>Введите нового преподавателя</h3>
             <div class="text-article">
-                <form
-                        method="POST"
-                        action=""
-                >
+                <form method="POST" action="">
                     <div>
                         <label for="fullName">ФИО </label>
-                        <input
-                                type="text"
-                                name="fullName"
-                        />
+                        <input type="text" name="fullName"/>
                     </div>
                     <div>
                         <label for="academicTitle">Учённое звание </label>
-                        <input
-                                type="text"
-                                name="email"
-                        />
+                        <input type="text" name="academicTitle"/>
                     </div>
                     <div>
                         <label for="academicDegree">Учённая степень </label>
-                        <input
-                                type="text"
-                                name="email"
-                        />
+                        <input type="text" name="academicDegree"/>
                     </div>
-                </form>
-                <p>
                     <button type="submit">Добавить</button>
-                </p>
+                </form>
             </div>
         </article>
     </section>

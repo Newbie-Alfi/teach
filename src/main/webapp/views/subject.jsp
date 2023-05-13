@@ -46,28 +46,19 @@
         <article>
             <h3>Введите новую дисциплину</h3>
             <div class="text-article">
-                <form
-                        method="POST"
-                        action=""
+                <form method="POST" action=""
                 >
-                    <p>
+                    <div>
                         <label for="name">Название </label>
-                        <input
-                                type="text"
-                                name="name"
-                        />
-                    </p>
-                    <p>
+                        <input type="text" name="name" required/>
+                    </div>
+                    <div>
                         <label for="type">Тип </label>
-                        <input
-                                type="text"
-                                name="type"
+                        <input type="text" name="type" required
                         />
-                    </p>
-                </form>
-                <p>
+                    </div>
                     <button type="submit">Добавить</button>
-                </p>
+                </form>
             </div>
         </article>
     </section>

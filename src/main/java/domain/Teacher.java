@@ -9,20 +9,20 @@ public class Teacher {
     private String academicDegree;
     public Teacher() {   }
 
-    public Teacher(String fullName, String academicTitle, String academicDegree, String post) {
+    public Teacher(String fullName, String academicTitle, String academicDegree) {
         this.fullName = fullName;
         this.academicTitle = academicTitle;
         this.academicDegree =academicDegree;
     }
 
-    public Teacher(Long id, String fullName, String academicTitle,  String academicDegree, String post) {
+    public Teacher(Long id, String fullName, String academicTitle,  String academicDegree) {
         this.id = id;
         this.fullName = fullName;
         this.academicTitle = academicTitle;
         this.academicDegree =academicDegree;
     }
 
-    public Teacher(Long id, String fullName, String academicTitle, Date createdAt) {
+    public Teacher(Long id, String fullName, String academicTitle) {
         this.id = id;
         this.fullName = fullName;
         this.academicTitle = academicTitle;

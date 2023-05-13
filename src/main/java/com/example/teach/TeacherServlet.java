@@ -2,12 +2,14 @@ package com.example.teach;
 
 import java.io.*;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 import dao.ConnectionProperty;
 import dao.EmpConnBuilder;
+import domain.Subject;
 import domain.Teacher;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -19,7 +21,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "helloServlet", value = "/teachers")
 public class TeacherServlet extends HttpServlet {
     ConnectionProperty prop;
-    String select_all_subjects = "SELECT id, full_name, academic_title, academic_degree FROM teacher";
+    String select_all_teachers = "SELECT id, full_name, academic_title, academic_degree FROM teacher";
+    String insert_teachers = "INSERT INTO teacher (full_name, academic_title, academic_degree) VALUES(?, ?, ?)";
     ArrayList<Teacher> teachers = new ArrayList<Teacher>();
     private String message;
 
@@ -39,12 +42,11 @@ public class TeacherServlet extends HttpServlet {
 
         try (Connection conn = builder.getConnection()) {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(select_all_subjects);
+            ResultSet rs = stmt.executeQuery(select_all_teachers);
             if (rs != null) {
                 teachers.clear();
                 while (rs.next()) {
                     teachers.add(new Teacher(
-                            rs.getString("id"),
                             rs.getString("full_name"),
                             rs.getString("academic_title"),
                             rs.getString("academic_degree")));
@@ -63,7 +65,28 @@ public class TeacherServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request,
                           HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
+
+        EmpConnBuilder builder = new EmpConnBuilder();
+
+        try (Connection conn = builder.getConnection()) {
+            String fullName = request.getParameter("fullName");
+            String academicDegree = request.getParameter("academicDegree");
+            String academicTitle = request.getParameter("academicTitle");
+
+            Teacher newTeacher = new Teacher(fullName, academicTitle, academicDegree);
+            try (PreparedStatement preparedStatement = conn.prepareStatement(insert_teachers)) {
+                preparedStatement.setString(1, newTeacher.getFullName());
+                preparedStatement.setString(2, newTeacher.getAcademicTitle());
+                preparedStatement.setString(3, newTeacher.getAcademicDegree());
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+            RequestDispatcher view = getServletContext().getRequestDispatcher("/views/teacher.jsp");
+            view.forward(request, response);
+        }
         doGet(request, response);
     }
 

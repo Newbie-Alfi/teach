@@ -3,6 +3,7 @@ package com.example.teach;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class SubjectServlet extends HttpServlet {
     ConnectionProperty prop;
     String select_all_subjects = "SELECT id, name, type FROM subject";
+    String insert_subject = "INSERT INTO subject (name, type) VALUES(?, ?)";
     ArrayList<Subject> subjects = new ArrayList<Subject>();
     String userPath;
     private String message;
@@ -59,10 +61,30 @@ public class SubjectServlet extends HttpServlet {
         }
     }
 
-    protected void doPost(HttpServletRequest request,
-                          HttpServletResponse response) throws ServletException, IOException {
-        // TODO Auto-generated method stub
-        doGet(request, response);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+            EmpConnBuilder builder = new EmpConnBuilder();
+
+            try (Connection conn = builder.getConnection()) {
+                String name = request.getParameter("name");
+                String type = request.getParameter("type");
+
+                Subject newSubject = new Subject(name, type);
+                try (PreparedStatement preparedStatement = conn.prepareStatement(insert_subject)) {
+                    preparedStatement.setString(
+                            1, newSubject.getName());
+                    preparedStatement.setString(
+                            2, newSubject.getType());
+                    preparedStatement.executeUpdate();
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            } catch (Exception e) {
+                System.out.println(e);
+                RequestDispatcher view = getServletContext().getRequestDispatcher("/views/subject.jsp");
+                view.forward(request, response);
+            }
+            doGet(request, response);
     }
     public void destroy() {
     }
